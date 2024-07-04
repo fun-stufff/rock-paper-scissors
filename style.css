@@ -1,0 +1,101 @@
+/* Large screen  */
+@media (max-width: 1400px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+/* Tablet screen  */
+@media (max-width: 768px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+/* Mobile screen  */
+@media (max-width: 450px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+body {
+  background-color: black;
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.choices {
+  display: flex;
+  justify-content: center;
+}
+
+.choice {
+  border: none;
+  background: none;
+  font-size: 3rem;
+  margin-top: 1em;
+  cursor: pointer;
+  transition: scale 200ms ease-in-out;
+}
+
+.choice:hover {
+  scale: 1.3;
+}
+
+.choice.end {
+  pointer-events: none;
+}
+
+.results > div {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+}
+
+.result-header {
+  margin: 1em;
+  font-size: 1.5rem;
+  opacity: 0.7;
+}
+
+.result.winner {
+  scale: 1.5;
+  opacity: 1;
+}
+
+.result-choice {
+  margin: 1em;
+  font-size: 1rem;
+  opacity: 0.3;
+}
+
+.result-choice.winner {
+  scale: 1.5;
+  opacity: 0.5;
+}
+
+.result-choice.latest {
+  scale: 2;
+  opacity: 0.7;
+}
+
+.result-choice.latest.winner {
+  scale: 2.5;
+  opacity: 1;
+}
+
+.game-status {
+  display: none;
+}
+
+.game-status.end {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+}
