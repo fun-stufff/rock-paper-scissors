@@ -4,8 +4,8 @@ const computerScore = document.querySelector("[data-computer-score]");
 const userScore = document.querySelector("[data-user-score]");
 const endingMsg = document.querySelector("[data-end-msg");
 const gameStatus = document.querySelector(".game-status");
-const highestScore = 10;
-const choiceArr = [
+const HIGHESTSCORE = 10;
+const CHOICEARR = [
   {
     name: "rock",
     emoji: "✊",
@@ -24,7 +24,7 @@ const choiceArr = [
 ];
 
 // Game instruction
-alert(`Don't let the bot wins ${highestScore} points first!`);
+alert(`Don't let the bot wins ${HIGHESTSCORE} points first!`);
 
 choiceButtons.forEach((choice) => {
   choice.addEventListener("click", () => {
@@ -53,7 +53,7 @@ choiceButtons.forEach((choice) => {
 
 function getUserChoice(choice) {
   const userChoice = choice.dataset.choice;
-  const userChoiceDict = choiceArr.find(
+  const userChoiceDict = CHOICEARR.find(
     // == involves type convertion
     (choice) => choice.name === userChoice
   );
@@ -61,8 +61,8 @@ function getUserChoice(choice) {
 }
 
 function getComputerChoice() {
-  const computerChoice = Math.floor(Math.random() * choiceArr.length);
-  const computerChoiceDict = choiceArr[computerChoice];
+  const computerChoice = Math.floor(Math.random() * CHOICEARR.length);
+  const computerChoiceDict = CHOICEARR[computerChoice];
   return computerChoiceDict;
 }
 
@@ -112,10 +112,10 @@ function updateScore(result) {
 function endGameOrNot() {
   var msg = "";
   if (
-    parseInt(computerScore.innerText) == highestScore ||
-    parseInt(userScore.innerText) == highestScore
+    parseInt(computerScore.innerText) == HIGHESTSCORE ||
+    parseInt(userScore.innerText) == HIGHESTSCORE
   ) {
-    if (parseInt(computerScore.innerText) == highestScore) {
+    if (parseInt(computerScore.innerText) == HIGHESTSCORE) {
       msg = "You lose!";
     } else {
       msg = "Congrats, you win!";
